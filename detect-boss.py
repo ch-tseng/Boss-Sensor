@@ -99,8 +99,10 @@ while True:
                 if(bossName in namePredict):
                     last_detect = time.time()
                     cv2.imshow("Face", roi_color)
-                    fakeScreen()
-                
+                    putText(img, namePredict, x, y-20, (0,0,255), thickness=2, size=2)
+                    #fakeScreen()
+                else:
+                    putText(img, namePredict, x, y-20, (0,255,0), thickness=2, size=2)
 		
     if(last_detect>0 and detectType==1):
         last_boss_time = datetime.datetime.fromtimestamp( int(last_detect) ).strftime('%Y-%m-%d %H:%M:%S')
