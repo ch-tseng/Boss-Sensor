@@ -11,7 +11,7 @@ import random
 import imutils
 import cv2
 
-facePath = "datasets2"
+facePath = "datasets"
 faces_min = 59
 face_size = (47, 62)
 test_size = 0.25
