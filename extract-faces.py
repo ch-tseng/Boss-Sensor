@@ -3,8 +3,8 @@ import cv2
 import glob
 import os
 
-sourePath = "datasets\\photos"
-savePath = "datasets\\faces"
+sourePath = "photos"
+savePath = "faces"
 face_size_min = (47, 62)
 
 if not os.path.exists(savePath):
