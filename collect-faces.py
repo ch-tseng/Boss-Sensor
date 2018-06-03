@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import glob
+import glob, os
 from sklearn.preprocessing import LabelEncoder
 from imutils import paths
 from scipy import io
@@ -20,6 +20,9 @@ cam_resolution = (1080,960)
 
 face_cascade = cv2.CascadeClassifier('objects\\haarcascade_frontalface_default.xml')
 #face_cascade = cv2.CascadeClassifier('objects\\lbpcascade_frontalface.xml')
+
+if not os.path.exists(savePath):
+    os.makedirs(savePath)
 	
 camera = cv2.VideoCapture(cam_id)
 camera.set(cv2.CAP_PROP_FRAME_WIDTH, cam_resolution[0])
