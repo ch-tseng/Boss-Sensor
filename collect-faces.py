@@ -12,7 +12,7 @@ import sys
 import time
 import datetime
 
-savePath = "datasets\\collected"
+savePath = "collected"
 cam_id = 0
 face_size = (47, 62)
 monitor_winSize = (640, 480)
