@@ -12,11 +12,12 @@ import imutils
 import cv2
 
 facePath = "datasets2"
-faces_min = 43
+faces_min = 59
 face_size = (47, 62)
+test_size = 0.25
 
 def load_sunplusit_faces(datasetPath, min_faces=10, face_size=face_size, equal_samples=True,
-	test_size=0.33, seed=42, flatten=False):
+	test_size=test_size, seed=42, flatten=False):
 	imagePaths = sorted(list(paths.list_images(datasetPath)))
 
 	# set the random seed, then initialize the data matrix and labels
@@ -85,7 +86,7 @@ def load_sunplusit_faces(datasetPath, min_faces=10, face_size=face_size, equal_s
 	# return a tuple of the training, testing bunches, and original labels
 	return (training, testing, labels) 
 	
-(training, testing, names) = load_sunplusit_faces(facePath, min_faces=faces_min, test_size=0.25)
+(training, testing, names) = load_sunplusit_faces(facePath, min_faces=faces_min, test_size=test_size)
 
 le = LabelEncoder()
 le.fit_transform(training.target)

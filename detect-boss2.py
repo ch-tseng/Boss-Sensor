@@ -7,11 +7,11 @@ import imutils
 import cv2
 import time
 import datetime
-time.sleep(0.5)
+
 #####################################################################
 detectType = 1   # 0 for any face, 1 for boss's face only
 bossName = "boss"
-cam_id = 0
+cam_id = 1
 monitor_winSize = (640, 480)
 cam_resolution = (1024,768)
 fake_screenFile = "objects\\desktop.jpg"
@@ -100,8 +100,8 @@ while True:
                     last_detect = time.time()
                     cv2.imshow("Face", roi_color)
                     putText(img, namePredict, x, y-20, (0,0,255), thickness=2, size=2)
-                    #fakeScreen()
                     time.sleep(0.5)
+                    #fakeScreen()
                 else:
                     putText(img, namePredict, x, y-20, (0,255,0), thickness=2, size=2)
 		

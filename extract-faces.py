@@ -1,22 +1,16 @@
+import numpy as np
 import cv2
 import glob
 import os
 
-####################################################################
 sourePath = "datasets\\photos"
 savePath = "datasets\\faces"
 face_size_min = (47, 62)
-cascade = "lbpcascade_frontalface.xml"  # lbpcascade_frontalface.xml / haarcascade_frontalface_default.xml
-####################################################################
 
-def checkDir(file_path):
-    directory = os.path.dirname(file_path)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
-checkDir(savePath)
+if not os.path.exists(savePath):
+    os.makedirs(savePath)
 	
-face_cascade = cv2.CascadeClassifier('objects\\' + cascade)
+face_cascade = cv2.CascadeClassifier('objects\\lbpcascade_frontalface.xml')
 
 i = 0
 
