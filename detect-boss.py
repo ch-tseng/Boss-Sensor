@@ -100,7 +100,7 @@ while True:
                     last_detect = time.time()
                     cv2.imshow("Face", roi_color)
                     putText(img, namePredict, x, y-20, (0,0,255), thickness=2, size=2)
-                    #fakeScreen()
+                    fakeScreen()
                     time.sleep(0.5)
                 else:
                     putText(img, namePredict, x, y-20, (0,255,0), thickness=2, size=2)
